@@ -1,0 +1,162 @@
+#include <iostream>
+#include "BalansiranoStablo.h"
+using namespace std;
+
+int main() {
+
+    BalansiranoStablo<int> s;
+    //insert i erase provjera.
+    s.Insert(20);
+    s.Insert(50);
+    s.Insert(10);
+    s.Insert(30);
+    s.Insert(40);
+    s.Insert(0);
+    s.Insert(60);
+    s.Insert(35);
+    s.Insert(15);
+    s.Insert(17);
+    s.Insert(36);
+    s.Insert(34);
+    s.Insert(41);
+    s.Insert(42);
+    s.Insert(33);
+    s.Insert(32);
+    s.Insert(7);
+    s.Insert(16);
+    s.Ispis();
+    cout << endl;
+    s.Insert(1);
+    s.Ispis();
+    cout << endl;
+    BalansiranoStablo<int> kopija1(s);
+    s.Ispis();
+    cout << endl;
+    kopija1.Ispis();
+    cout << endl;
+    BalansiranoStablo<int> kopija2(move(kopija1));
+    //kopija2.Insert(1);
+    kopija2.Ispis();
+    s.Ispis();
+    s = kopija2;
+
+    cout << "Pocetak je: " <<s.Pocetak()->element;
+    cout << endl;
+    s.Ispis();cout << endl;
+    cout <<  "Visina je " <<s.Visina() << endl;
+    s.InOrder();
+    cout<<endl;
+    for(auto trenutni = s.Pocetak(); trenutni != nullptr; trenutni = s.Sljedbenik(trenutni))
+        cout<<trenutni->element<<" ";
+    cout<<endl;
+    s.Erase(30);
+    s.Erase(10);
+    s.Erase(40);
+    s.Erase(17);
+    s.Erase(35);
+    s.Erase(15);
+    s.Erase(0);
+    s.Erase(60);
+    s.Erase(36);
+    s.Erase(33);
+    s.Ispis();cout << endl;
+    s.Erase(50);
+    s.Erase(42);
+    s.Erase(41);
+    s.Ispis();cout << endl;
+    s.Erase(20);
+    s.Erase(34);
+    s.Erase(7);
+    s.Erase(16);
+    s.Erase(32);
+    s.Ispis();cout << endl;
+    s.Erase(1);
+    //Nakon sto smo sve izbrisali unosimo velik broj cifri da vidimo hoce li biti balansirano
+    s.Insert(1001);
+    s.Insert(202);
+    s.Insert(503);
+    s.Insert(104);
+    s.Insert(305);
+    s.Insert(406);
+    s.Insert(07);
+    s.Insert(88);
+    s.Insert(359);
+    s.Insert(150);
+    s.Insert(171);
+    s.Insert(362);
+    s.Insert(343);
+    s.Insert(414);
+    s.Insert(425);
+    s.Insert(336);
+    s.Insert(17);
+    s.Insert(38);
+    s.Insert(1339);
+    s.Insert(2330);
+    s.Insert(1131);
+    s.Insert(212);
+    s.Insert(3233);
+    s.Insert(3134);
+    s.Insert(565);
+    s.Insert(26);
+    s.Insert(47);
+    s.Insert(998);
+    s.Insert(1019);
+    s.Insert(6060);
+    s.Insert(7001);
+    s.Insert(2562);
+    s.Insert(2733);
+    s.Insert(194);
+    s.Insert(885);
+    s.Insert(816);
+    s.Insert(9997);
+    s.Insert(1098);
+    s.Insert(4539);
+    s.Insert(6540);
+    s.Insert(431);
+    s.Insert(112);
+    s.Insert(123);
+    s.Insert(244);
+    s.Insert(22325);
+    s.Insert(22446);
+    s.Insert(20007);
+    s.Insert(21118);
+    s.Insert(10009);
+    s.Insert(9520);
+    s.Insert(2471);
+    s.Insert(3882);
+    s.Insert(793);
+    s.Insert(724);
+    s.Insert(705);
+    s.Insert(7016);
+    s.Insert(7777);
+    s.Insert(10468);
+    s.Insert(5019);
+    s.Insert(2220);
+    s.Insert(271);
+    s.Insert(6092);
+    s.Insert(6023);
+    s.Insert(50004);
+    s.Insert(50015);
+    s.Insert(50046);
+    s.Insert(60007);
+
+    s.Ispis();cout << endl;
+
+    s.Erase(1001);
+    s.Erase(202);
+    s.Erase(503);
+
+    s.Ispis();cout << endl;
+
+    BalansiranoStablo<int> m;
+    m.Insert(2);
+    m.Insert(22);
+    m.Insert(222);
+    m.Insert(2222);
+    m.Insert(22222);
+    m.Insert(222222);
+    m.Insert(2222222);
+    m.Ispis();cout << endl;
+    return 0;
+}
+
